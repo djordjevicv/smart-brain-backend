@@ -8,7 +8,7 @@ const signIn = require("./controllers/signIn");
 const image = require("./controllers/image");
 const leaderboard = require("./controllers/leaderboard");
 const profileID = require("./controllers/profile-id");
-//const imageURL = require("./controllers/imageURL")
+const imageURL = require("./controllers/imageURL")
 
 const app = express();
 
@@ -48,7 +48,7 @@ app.put("/image", image.handleImage(db));
 
 //make the API call from the server to keep the API secure
 //IN PROGRESS
-//app.post("/imageURL", imageURL.handleAPICall());
+app.post("/imageURL", imageURL.handleAPICall());
 
 //REGISTRATION OF USERS
 //DONE
