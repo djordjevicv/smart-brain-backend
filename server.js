@@ -47,7 +47,7 @@ app.put("/image", image.handleImage(db));
 
 //make the API call from the server to keep the API secure
 //IN PROGRESS
-app.post("/imageURL", imageURL.handleAPICall());
+//app.post("/imageURL", imageURL.handleAPICall());
 
 //REGISTRATION OF USERS
 //DONE
