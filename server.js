@@ -8,7 +8,7 @@ const signIn = require("./controllers/signIn");
 const image = require("./controllers/image");
 const leaderboard = require("./controllers/leaderboard");
 const profileID = require("./controllers/profile-id");
-const imageURL = require("./controllers/imageURL")
+//const imageURL = require("./controllers/imageURL")
 
 const app = express();
 
