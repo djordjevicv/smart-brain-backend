@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 
 app.get("/profile/:id", profileID.handleGettingTheUser(db));
 
-app.post("/signin", signIn.handleSignIn(req, res));
+app.post("/signin", (req, res) => signIn.handleSignIn(req, res));
 
 app.put("/image", image.handleImage(db));
 
