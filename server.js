@@ -12,6 +12,7 @@ const imageURL = require("./controllers/imageURL")
 
 const app = express();
 
+//CONNECTION TO THE DATABASE
 const db = knex({
     client: 'pg',
     connection: {
@@ -28,42 +29,26 @@ const db = knex({
 app.use(express.json());
 app.use(cors());
 
-//ROOT 
-//DONE
+//ENDPOINTS
 app.get("/", (req, res) => {
     db.select('*').from('users')
         .then(users => res.json(users))
 })
 
-//GETTING THE APP WINDOW BASED ON A PROFILE
-//DONE
 app.get("/profile/:id", profileID.handleGettingTheUser(db));
 
-//SIGN IN FUNCTIONALITY
-app.post("/signin", signIn.handleSignIn(db, bcrypt));
+app.post("/signin", signIn.handleSignIn);
 
-//update the entry count
-//DONE
 app.put("/image", image.handleImage(db));
 
-//make the API call from the server to keep the API secure
-//IN PROGRESS
 app.post("/imageURL", imageURL.handleAPICall());
 
-//REGISTRATION OF USERS
-//DONE
 app.post("/register", register.handleRegister(db, bcrypt));
 
-//GET TOP 5
-//DONE
 app.get("/leaderboard", leaderboard.getTopUsers(db));
 
 app.listen(3001);
 
-/*
-    / --> res = this is working
-    /signin --> POST = success/fail
-    /register --> put = user
-    /profile/:userID --> GET = user
-    /image --> PUT --> user
-*/
+module.exports = {
+    db
+}
