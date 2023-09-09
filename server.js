@@ -39,13 +39,13 @@ app.get("/profile/:id", (req, res) => profileID.handleGettingTheUser(req, res));
 
 app.post("/signin", signIn.handleSignIn);
 
-app.put("/image", (req, res) => image.handleImage(req, res));
+app.put("/image", image.handleImage);
 
-app.post("/imageURL", (req, res) => imageURL.handleAPICall(req, res));
+app.post("/imageURL", imageURL.handleAPICall);
 
-app.post("/register", (req, res) => register.handleRegister(req, res));
+app.post("/register", register.handleRegister);
 
-app.get("/leaderboard", (req, res) => leaderboard.getTopUsers(req, res));
+app.get("/leaderboard", leaderboard.getTopUsers);
 
 app.listen(3001);
 
