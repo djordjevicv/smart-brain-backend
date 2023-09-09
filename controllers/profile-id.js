@@ -1,4 +1,7 @@
-const handleGettingTheUser = (db) => (req, res) => {
+const handleGettingTheUser = (req, res) => {
+
+    const { db } = require('../server');
+
     const { id } = req.params;
     db.select('*').where('id', id).from('users')
         .then(user => {

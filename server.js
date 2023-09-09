@@ -35,17 +35,17 @@ app.get("/", (req, res) => {
         .then(users => res.json(users))
 })
 
-app.get("/profile/:id", profileID.handleGettingTheUser(db));    
+app.get("/profile/:id", (req, res) => profileID.handleGettingTheUser(req, res));    
 
 app.post("/signin", (req, res) => signIn.handleSignIn(req, res));
 
-app.put("/image", image.handleImage(db));
+app.put("/image", (req, res) => image.handleImage(req, res));
 
-app.post("/imageURL", imageURL.handleAPICall());
+app.post("/imageURL", (req, res) => imageURL.handleAPICall(req, res));
 
-app.post("/register", register.handleRegister(db, bcrypt));
+app.post("/register", (req, res) => register.handleRegister(req, res));
 
-app.get("/leaderboard", leaderboard.getTopUsers(db));
+app.get("/leaderboard", (req, res) => leaderboard.getTopUsers(req, res));
 
 app.listen(3001);
 

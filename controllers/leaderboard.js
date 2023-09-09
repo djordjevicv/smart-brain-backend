@@ -1,4 +1,7 @@
-const getTopUsers = (db) => (req, res) => {
+const getTopUsers = (req, res) => {
+
+    const { db } = require('../server');
+
     db('users').select('name', 'entries')
         .orderBy('entries', 'desc')
         .limit(5)

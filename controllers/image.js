@@ -1,4 +1,7 @@
-const handleImage = (db) => (req, res) => {
+const handleImage = (req, res) => {
+
+    const { db } = require('../server');
+
     const { id } = req.body;
     db('users').where('id', '=', id)
         .increment('entries', 1)
