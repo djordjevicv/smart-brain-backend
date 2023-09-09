@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
         .then(users => res.json(users))
 })
 
-app.get("/profile/:id", profileID.handleGettingTheUser(db));
+app.get("/profile/:id", profileID.handleGettingTheUser(db));    
 
 app.post("/signin", (req, res) => signIn.handleSignIn(req, res));
 
@@ -50,5 +50,5 @@ app.get("/leaderboard", leaderboard.getTopUsers(db));
 app.listen(3001);
 
 module.exports = {
-    db
+    db, bcrypt
 }
