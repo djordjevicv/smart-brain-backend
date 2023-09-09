@@ -1,4 +1,4 @@
-const database = require('../server');
+const db = require('../server');
 const bcrypt = require('bcrypt-nodejs');
 
 const handleSignIn = (req, res) => {
