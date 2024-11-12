@@ -6,3 +6,5 @@
 - It's the final project for the course The Complete Web Developer in 2023: Zero to Mastery.
 
 [Test the app here](https://smartbrain-aspy.onrender.com/) 👈🏻
+
+### [Front-end code](https://github.com/djordjevicv/smart-brain-frontend//) 👈🏻
